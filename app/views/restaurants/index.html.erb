@@ -1,0 +1,41 @@
+<%= image_tag("tiffin1.jpg", class: "responsive-img", alt: "Tiffin", title:"Tiffin!") %>
+<p>A green delivery service for lunch!  Enjoy your favorites made right in your neighborhood.  We bike, we hike and we hope you like (us on Facebook).
+
+No tipping! We pay our bikers and hikers a livable wage -b/c we’ve been making America great again since 2012.</p>
+<h1>Restaurants</h1>
+<% if signed_in? && current_user.email == 'owner@gmail.com' %>
+  <%= link_to 'Create Restaurant', new_restaurant_path, class: 'btn grey darken-2' %>
+<% end %>
+
+<aside class="col s12 m4">
+  <% if @restaurants.any? %>
+    <h5 class="center">Restaurant Guide</h5>
+    <ul>
+      <% @restaurants.each do |r| %>
+        <li>
+          <div class="col s12 m12">
+            <div class="card appointments_card z-depth-0">
+              <div class="card-content black-text">
+                <span class="card-title"><%= r.name %></span>
+                <p><strong>Description:</strong> <%= r.description %> </p>
+                <p><strong>Street:</strong> <%= r.street %> </p>
+                <p><strong>City:</strong> <%= r.city %> </p>
+                <p><strong>State:</strong> <%= r.state %> </p>
+                <p><strong>Postal:</strong> <%= r.postal %> </p>
+                <p><strong>Delivery:</strong> <%= r.delivery %> </p>
+              </div>
+              <div class="card-action appointments_card">
+                  <% if signed_in? && current_user.email == 'owner@gmail.com' %>
+                    <%= link_to 'Delete Restaurant', restaurant_path(r), method: :delete, class: 'btn grey darken-2' %>
+                  <% end %>
+                <%= link_to 'To Restaurant Order', new_restaurant_order_path(r), class: 'btn grey darken-2' %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h5>No Restaurants found</h5>
+  <% end %>
+</aside>

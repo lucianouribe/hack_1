@@ -1,0 +1,48 @@
+<h1>Deliveries</h1>
+<p>Customer Information for delivery</p>
+
+<div class="row">
+  <%= form_for [@order, @delivery] do |f| %>
+    <div class="col m6">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <div class="col m6">
+      <%= f.label :street %>
+      <%= f.text_field :street, required: true %>
+    </div>
+    <div class="col m6">
+      <%= f.label :city %>
+      <%= f.text_field :city, required: true %>
+    </div>
+    <div class="col m6">
+      <%= f.label :state %>
+      <%= f.text_field :state, required: true %>
+    </div>
+    <div class="col m6">
+      <%= f.label :postal %>
+      <%= f.number_field :postal, required: true %>
+    </div>
+    <div class='input-field col m6'>
+      <%= f.label :payment_type %>
+      <br/>
+      <br/>
+      <br/>
+      <%= f.select :payment_type, options_for_select(['Visa', 'Master Card', 'Debit Card', 'Paypal']) %>
+    </div>
+    <div class='text-align: center'>
+      <p><strong>Your order:</strong></p>
+      <p><%= @order.main_dish %></p>
+      <p><%= @order.drinks %></p>
+      <p><%= @order.dessert %></p>
+    </div>
+    <%= f.submit 'Payment', class: 'btn grey darken-2' %>
+  <% end %>
+
+
+  <div class="center">
+    <hr />
+    <br/>
+    <%= link_to 'Back', :back, class: 'btn grey darken-2' %>
+  </div>
+</div>

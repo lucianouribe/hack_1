@@ -1,0 +1,45 @@
+<h1>Your Order</h1>
+
+<% if @order.main_dish == 'Chicken Mukhani' %>
+  <p><%= @order.main_dish%> $8</p>
+  <% m_price = 8 %>
+<% end %>
+<% if @order.main_dish == 'Saag Paneer' %>
+  <p><%= @order.main_dish%> $9</p>
+  <% m_price = 9 %>
+<% end %>
+<% if @order.main_dish == 'Red Curry Lamb' %>
+  <p><%= @order.main_dish%> $12</p>
+  <% m_price = 12 %>
+<% end %>
+<% if @order.drinks == 'Mango Lassi' %>
+  <p><%= @order.drinks%> $4</p>
+  <% d_price = 4 %>
+<% end %>
+<% if @order.drinks == 'Chai' %>
+  <p><%= @order.drinks%> $2</p>
+  <% d_price = 2 %>
+<% end %>
+<% if @order.drinks == 'Beer' %>
+  <p><%= @order.drinks%> $5</p>
+  <% d_price = 5 %>
+<% end %>
+<% if @order.dessert == 'Gulab Jamun' %>
+  <p><%= @order.dessert%> $5</p>
+  <% ds_price = 5 %>
+<% end %>
+<% if @order.dessert == 'Coconut Ladoo' %>
+  <p><%= @order.dessert%> $4</p>
+  <% ds_price = 4 %>
+<% end %>
+<% if @order.dessert == 'Kheer' %>
+  <p><%= @order.dessert%> $3</p>
+  <% ds_price = 3 %>
+<% end %>
+
+<h5> Total: $ <%= m_price + d_price + ds_price %></h5>
+
+
+
+<%= link_to 'Change your order', edit_restaurant_order_path(@restaurant, @order.id),  class: 'btn grey darken-2' %>
+<%= link_to 'Proceed to checkout', new_order_delivery_path(@order.id),  class: 'btn grey darken-2' %>

@@ -1,0 +1,19 @@
+body {
+  font-family: fantasy;
+  font-size: 20px;
+  background: white;
+  color: grey;
+  text-align: center;
+}
+
+.flash.success {
+  color: #5D8A76;
+}
+
+.flash.notice {
+  color: #5D8A76;
+}
+
+.flash.error {
+  color: #A53727;
+}

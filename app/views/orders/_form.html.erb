@@ -1,0 +1,21 @@
+<div class="row">
+  <%= form_for [@restaurant, @order] do |f| %>
+
+    <div class="col m12">
+      <%= f.label :main_dish %>
+      <br/>
+      <%= f.select :main_dish, options_for_select(['Chicken Mukhani', 'Saag Paneer', 'Red Curry Lamb']) %>
+    </div>
+    <div class="col m12">
+      <%= f.label :drinks %>
+      <br/>
+      <%= f.select :drinks, options_for_select(['Mango Lassi', 'Chai', 'Beer']) %>
+    </div>
+    <div class="col m12">
+      <%= f.label :dessert %>
+      <br/>
+      <%= f.select :dessert, options_for_select(['Gulab Jamun', 'Coconut Ladoo', 'Kheer']) %>
+    </div>
+    <%= f.submit nil, class: 'btn grey darken-2' %>
+  <% end %>
+</div>
