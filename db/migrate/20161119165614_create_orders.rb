@@ -4,7 +4,10 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.string :main_dish, null: false
       t.string :drinks
       t.string :dessert
-      t.float :price
+      t.integer :m_price
+      t.integer :d_price
+      t.integer :ds_price
+
 
       t.belongs_to :restaurant, foreign_key: true
 

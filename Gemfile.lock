@@ -57,6 +57,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
@@ -128,6 +129,23 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -135,6 +153,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -171,20 +191,22 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.2)
-  devise
+  devise (~> 4.2.0)
   jbuilder (~> 2.5)
-  jquery-rails
+  jquery-rails (~> 4.2.1)
   listen (~> 3.0.5)
-  materialize-sass
+  materialize-sass (~> 0.97.8)
   pg (~> 0.18)
-  pry
+  pry (~> 0.10.4)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rspec-rails (~> 3.5.2)
   sass-rails (~> 5.0)
-  spring
+  shoulda-matchers (~> 3.1)
+  spring (~> 2.0.0)
   spring-watcher-listen (~> 2.0.0)
   uglifier (>= 1.3.0)
-  web-console
+  web-console (~> 3.4.0)
 
 RUBY VERSION
    ruby 2.3.1p112

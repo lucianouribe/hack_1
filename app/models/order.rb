@@ -5,6 +5,7 @@ class Order < ApplicationRecord
   has_one :delivery, dependent: :destroy
 
   def total
-    @m_price + @d_price + @ds_price
+    m_price + d_price + ds_price
   end
+
 end
